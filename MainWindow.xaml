@@ -8,6 +8,28 @@
         Title="MainWindow" Height="450" Width="400">
     
     <StackPanel Margin="5 2">
+        <StackPanel.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontWeight" Value="Bold"/>
+                
+            </Style>
+            <Style TargetType="TextBlock">                
+                <Setter Property="Margin" Value="0,5,2,5"/>
+            </Style>
+
+            <!--<Style TargetType="TextBlock">
+                <Style.Triggers>
+                    <Trigger Property="Grid.Column" Value="0">
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="Margin" Value="0,5,2,5"/>
+                        --><!--<Setter Property="FontWeight" Value="Bold"/>--><!--
+                    </Trigger>
+                    <Trigger Property="Grid.Column" Value="1">
+                        <Setter Property="Margin" Value="2,5,0,5"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+        </StackPanel.Resources>
         <UniformGrid DockPanel.Dock="Top" Rows="1" Margin="-3,3">
             <Button Content="Load"
                             CommandParameter="{}"    
@@ -20,8 +42,10 @@
         <Border BorderThickness="1"
                         BorderBrush="Black">
             <DockPanel>
-                <TextBlock Text="Выбранный элемент:"
-                                   DockPanel.Dock="Left"/>
+                <Label Content ="Выбранный элемент:"
+                       DockPanel.Dock="Left"></Label>
+                <!--<TextBlock Text="Выбранный элемент:"
+                                   DockPanel.Dock="Left"/>-->
                 <TextBlock Text="Binding Surname"
                                    DockPanel.Dock="Right"
                                    TextAlignment="Right"/>
@@ -30,8 +54,10 @@
         <Border BorderThickness="1"
                         BorderBrush="Black">
             <DockPanel HorizontalAlignment="Stretch">
-                <TextBlock Text="Фильтр:"
-                                   DockPanel.Dock="Left"/>
+                <Label Content ="Выбранный элемент:"
+                       DockPanel.Dock="Left"></Label>
+                <!--<TextBlock Text="Фильтр:"
+                                   DockPanel.Dock="Left"/>-->
                 <TextBlock Text="Binding Name" Width="Auto"
                                    HorizontalAlignment="Right"
                                    DockPanel.Dock="Right"
