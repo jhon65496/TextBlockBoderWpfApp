@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Style.Triggers>
+                    <Trigger Property="Grid.Column" Value="0">
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="Margin" Value="0,5,2,5"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Trigger>
+                    <Trigger Property="Grid.Column" Value="1">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="2,5,0,5"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
         <GroupBox Header="Phone--DataGrid">
             <DockPanel>
                 <UniformGrid DockPanel.Dock="Top" Rows="1" Margin="-3,3">
@@ -20,6 +35,15 @@
                             CommandParameter="{Binding SelectedGroup}"
                             Foreground="Green" Padding="0,5" Margin="3,0"/>                  
                 </UniformGrid>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Stack--Фильтр:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Binding Name" Width="Auto"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Stack--Фильтр:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Binding Name" Width="Auto"/>
+                </StackPanel>
+
                 <Grid DockPanel.Dock="Top">
                     <Grid.Resources>
                         <Style TargetType="TextBlock">
