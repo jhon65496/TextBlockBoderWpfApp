@@ -30,6 +30,7 @@
                                     <Setter Property="FontWeight" Value="Bold"/>
                                 </Trigger>
                                 <Trigger Property="Grid.Column" Value="1">
+                                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
                                     <Setter Property="Margin" Value="2,5,0,5"/>
                                 </Trigger>
                             </Style.Triggers>
@@ -41,17 +42,22 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>                    
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Выбранный элемент:"/>
+                    
                     <TextBlock Grid.Column="0" Grid.Row="1" Text="Фильтр:"/>
 
-                    <Border BorderThickness="1" BorderBrush="Black">
-                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Binding Surname"/>
+                    <Border BorderThickness="1" BorderBrush="Black" 
+                            Grid.Column="0" Grid.Row="2" 
+                            Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Выбранный элемент:"/>
+                            <TextBlock Text="Binding Surname"/>
+                        </StackPanel>
                     </Border>
                     <TextBlock Grid.Column="1" Grid.Row="1" Text="Binding Name" Width="Auto"/>
-
                 </Grid>
                 <DataGrid ItemsSource="{Binding Groups}" 
                         DockPanel.Dock="Bottom" 
